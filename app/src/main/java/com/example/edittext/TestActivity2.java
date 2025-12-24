@@ -1,27 +1,44 @@
 package com.example.edittext;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class TestActivity2 extends AppCompatActivity {
 
-    private EditText edtvTest;
+    private NoPasteEditText edtvTest;
     private TextView tvTest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test2);
-        edtvTest = (EditText) findViewById(R.id.edtv_test);
+        edtvTest = (NoPasteEditText) findViewById(R.id.edtv_test);
         edtvTest.setImeOptions(EditorInfo.IME_ACTION_SEND);
         edtvTest.setInputType(EditorInfo.TYPE_CLASS_TEXT);
         edtvTest.setSingleLine(true);
         tvTest = (TextView) findViewById(R.id.tv_test);
+        edtvTest.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
     }
 
     /**

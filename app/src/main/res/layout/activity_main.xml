@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="10dp"
+        android:textAllCaps="false"
         android:text="EditText禁止粘贴"
         android:onClick="onTest2"/>
 
